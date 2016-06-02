@@ -1,7 +1,9 @@
 package org.swarmic.samples.camel;
 
+import io.astefanutti.metrics.cdi.MetricsExtension;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
+import org.apache.camel.cdi.CdiCamelExtension;
 import org.apache.camel.main.MainSupport;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
@@ -22,6 +24,12 @@ import java.util.Map;
 @Vetoed
 public class Main extends MainSupport {
 
+    static {
+        // Since version 2.3.0.Final and WELD-1915, Weld SE registers a shutdown hook that conflicts
+        // with Camel main support. See WELD-2051. The system property above is available starting
+        // Weld 2.3.1.Final to deactivate the registration of the shutdown hook.
+        System.setProperty("org.jboss.weld.se.shutdownHook", String.valueOf(Boolean.FALSE));
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
@@ -35,7 +43,7 @@ public class Main extends MainSupport {
 
     @Override
     protected ProducerTemplate findOrCreateCamelTemplate() {
-        Instance<CamelContext> contexts=getCamelContextInstances();
+        Instance<CamelContext> contexts = getCamelContextInstances();
         if (contexts.isUnsatisfied()) {
             throw new UnsatisfiedResolutionException("No default Camel context is deployed, cannot create default ProducerTemplate!");
         }
@@ -59,7 +67,13 @@ public class Main extends MainSupport {
     @Override
     protected void doStart() throws Exception {
 
-        cdiContainer= new Weld()
+        cdiContainer = new Weld()
+                .disableDiscovery()
+                .addPackages(true, io.astefanutti.metrics.cdi.MetricsConfiguration.class
+                        , org.apache.camel.cdi.CdiCamelContext.class
+                        , org.swarmic.samples.camel.Main.class)
+                .addExtension(new MetricsExtension())
+                .addExtension(new CdiCamelExtension())
                 .initialize();
 
         // TODO: Switch to CDI 2.0 boot when available in Weld 3
