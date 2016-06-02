@@ -20,17 +20,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>org.apache.deltaspike.cdictrl</groupId>
-            <artifactId>deltaspike-cdictrl-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.deltaspike.cdictrl</groupId>
-            <artifactId>deltaspike-cdictrl-weld</artifactId>
-        </dependency>
-
-
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -78,7 +67,7 @@
                 <version>1.5.0</version>
                 <configuration>
                     <executable>java</executable>
-                    <commandlineArgs>-classpath %classpath org.apache.camel.cdi.Main</commandlineArgs>
+                    <commandlineArgs>-classpath %classpath org.swarmic.samples.camel.Main</commandlineArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -113,7 +102,7 @@
                                         <!-- add Main-Class to manifest file -->
                                         <transformer
                                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>org.apache.camel.cdi.Main</mainClass>
+                                            <mainClass>org.swarmic.samples.camel.Main</mainClass>
                                         </transformer>
                                     </transformers>
                                 </configuration>

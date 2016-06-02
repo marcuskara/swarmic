@@ -103,21 +103,6 @@
                 <scope>runtime</scope>
             </dependency>
 
-
-            <dependency>
-                <groupId>org.apache.deltaspike.cdictrl</groupId>
-                <artifactId>deltaspike-cdictrl-api</artifactId>
-                <version>${deltaspike.version}</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.deltaspike.cdictrl</groupId>
-                <artifactId>deltaspike-cdictrl-weld</artifactId>
-                <version>${deltaspike.version}</version>
-                <scope>runtime</scope>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
