@@ -98,7 +98,6 @@ class Application {
 
     @Produces
     @Singleton
-    // TODO: change to @ApplicationScoped when ARQ-2023 and PAXCDI-221 are fixed
     Slf4jReporter reporter(MetricRegistry registry) {
         return Slf4jReporter.forRegistry(registry)
             .convertRatesTo(TimeUnit.SECONDS)
