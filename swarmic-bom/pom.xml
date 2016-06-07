@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--
   ~ JBoss, Home of Professional Open Source
   ~ Copyright 2016, Red Hat, Inc., and individual contributors
   ~ by the @authors tag.
@@ -13,7 +13,7 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  -->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -62,6 +62,8 @@
         <tamaya.version>0.2-incubating</tamaya.version>
         <assertj.version>3.4.1</assertj.version>
         <commons-io.version>2.5</commons-io.version>
+        <narayana-jta.version>5.3.3.Final</narayana-jta.version>
+        <javax.transaction-api.version>1.2</javax.transaction-api.version>
     </properties>
 
     <dependencyManagement>
@@ -93,6 +95,18 @@
                 <groupId>org.jboss.weld.se</groupId>
                 <artifactId>weld-se-shaded</artifactId>
                 <version>${weld.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.narayana.jta</groupId>
+                <artifactId>narayana-jta</artifactId>
+                <version>${narayana-jta.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>javax.transaction-api</artifactId>
+                <version>${javax.transaction-api.version}</version>
             </dependency>
 
             <dependency>

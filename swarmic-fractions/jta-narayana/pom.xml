@@ -19,35 +19,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>swarmic</artifactId>
+        <artifactId>swarmic-fractions</artifactId>
         <groupId>org.swarmic</groupId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>swarmic-fractions</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>web-spi</module>
-        <module>web-undertow</module>
-        <module>rest-resteasy</module>
-        <module>security-spi</module>
-        <module>web-jetty</module>
-        <module>jta-narayana</module>
-        <module>camel</module>
-    </modules>
+    <artifactId>jta-narayana</artifactId>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.swarmic</groupId>
-                <artifactId>swarmic-bom</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.narayana.jta</groupId>
+            <artifactId>narayana-jta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>
