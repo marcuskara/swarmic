@@ -99,7 +99,7 @@
 
     <profiles>
         <profile>
-            <id>shaded</id>
+            <id>jar</id>
             <build>
                 <plugins>
                     <plugin>
@@ -114,6 +114,7 @@
                                     <goal>shade</goal>
                                 </goals>
                                 <configuration>
+                                    <finalName>swarmic-camel</finalName>
                                     <transformers>
                                         <!-- add Main-Class to manifest file -->
                                         <transformer
