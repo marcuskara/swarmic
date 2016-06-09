@@ -19,24 +19,20 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>swarmic-samples</artifactId>
+        <artifactId>swarmic-parent</artifactId>
         <groupId>org.swarmic</groupId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../swarmic-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>camel-metrics</artifactId>
 
+    <properties>
+        <swarmic.mainClass>org.swarmic.samples.camel.Main</swarmic.mainClass>
+    </properties>
 
     <dependencies>
-
-
-        <dependency>
-            <groupId>org.jboss.weld.se</groupId>
-            <artifactId>weld-se-shaded</artifactId>
-        </dependency>
-
-
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -76,17 +72,7 @@
     </dependencies>
 
     <build>
-
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.5.0</version>
-                <configuration>
-                    <executable>java</executable>
-                    <commandlineArgs>-classpath %classpath org.swarmic.samples.camel.Main</commandlineArgs>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -96,39 +82,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>jar</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-shade-plugin</artifactId>
-                        <version>2.4.3</version>
-                        <executions>
-                            <!-- Run shade goal on package phase -->
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>shade</goal>
-                                </goals>
-                                <configuration>
-                                    <finalName>swarmic-camel</finalName>
-                                    <transformers>
-                                        <!-- add Main-Class to manifest file -->
-                                        <transformer
-                                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>org.swarmic.samples.camel.Main</mainClass>
-                                        </transformer>
-                                    </transformers>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
 </project>

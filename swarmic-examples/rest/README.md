@@ -32,7 +32,7 @@ You can crate a fat jar containing all resources to run this example just enter 
 
 Then you can launch the service with:
 
-`java -jar ./target/swarmic-rest.jar`
+`java -jar ./target/swarmic.jar`
 
 
 ## Feedback
