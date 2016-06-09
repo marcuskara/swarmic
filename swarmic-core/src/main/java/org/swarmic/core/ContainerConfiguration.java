@@ -1,8 +1,8 @@
-/*******************************************************************************
+/*
  * JBoss, Home of Professional Open Source
  * Copyright 2016, Red Hat, Inc., and individual contributors
  * by the @authors tag.
- * <p>
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,33 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- ******************************************************************************/
+ */
 
 package org.swarmic.core;
 
-
 /**
  *
- * This class is the default main entry point to boot Swarmic
+ * This Service interface is used to configure the container before it is built
  *
- * @author John D. Ament
  * @author Antoine Sabot-Durand
  */
-public class Bootstrap {
-
-    private static Runner runner;
+interface ContainerConfiguration {
 
     /**
+     * Method called by the bootstrap sequence to alter container configuration
      *
-     * Main method to boot Swarmic.
-     * It uses a {@link Runner} object to start CDI container
-     *
-     * @param args command line args
+     * @param configurator the {@link ContainerConfigurator} object
      */
-    public static void main(String... args) {
-        runner = new Runner();
-        runner.run(args);
-    }
+    void configure(ContainerConfigurator configurator);
 
 }
-
