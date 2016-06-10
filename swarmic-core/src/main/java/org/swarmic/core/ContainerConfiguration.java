@@ -22,7 +22,7 @@ package org.swarmic.core;
  *
  * @author Antoine Sabot-Durand
  */
-interface ContainerConfiguration {
+public interface ContainerConfiguration {
 
     /**
      * Method called by the bootstrap sequence to alter container configuration
