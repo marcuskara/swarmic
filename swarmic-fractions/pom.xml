@@ -34,6 +34,7 @@
         <module>rest-resteasy</module>
         <module>security-spi</module>
         <module>web-jetty</module>
+        <module>camel</module>
     </modules>
 
     <dependencyManagement>

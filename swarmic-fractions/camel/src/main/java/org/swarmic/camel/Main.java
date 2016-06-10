@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-package org.swarmic.samples.camel;
+package org.swarmic.camel;
 
-import io.astefanutti.metrics.cdi.MetricsExtension;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
-import org.apache.camel.cdi.CdiCamelExtension;
 import org.apache.camel.main.MainSupport;
-import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.swarmic.core.Runner;
 
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.UnsatisfiedResolutionException;
@@ -32,10 +30,12 @@ import javax.enterprise.inject.Vetoed;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * This class starts CDI container and Camel.
- * It based on Camel MainSupport class
+ *
+ * This Boostrap class use Swarmic {@link Runner} to start CDI container and also starts Camel
+ *
+ * @author Antoine Sabot-Durand
+ * @author Antonin Stefanutti
  */
 @Vetoed
 public class Main extends MainSupport {
@@ -83,16 +83,7 @@ public class Main extends MainSupport {
     @Override
     protected void doStart() throws Exception {
 
-        cdiContainer = new Weld()
-                .disableDiscovery()
-                .addPackages(true, io.astefanutti.metrics.cdi.MetricsConfiguration.class
-                        , org.apache.camel.cdi.CdiCamelContext.class
-                        , org.swarmic.samples.camel.Main.class)
-                .addExtension(new MetricsExtension())
-                .addExtension(new CdiCamelExtension())
-                .initialize();
-
-        // TODO: Switch to CDI 2.0 boot when available in Weld 3
+        cdiContainer = new Runner().run();
         super.doStart();
         postProcessContext();
         warnIfNoCamelFound();

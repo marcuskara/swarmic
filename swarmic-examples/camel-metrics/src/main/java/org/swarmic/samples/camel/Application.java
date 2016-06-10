@@ -53,8 +53,10 @@ import java.util.concurrent.TimeUnit;
  * <p> In addition, a ratio gauge {@code success-ratio = success / generated} is registered.
  *
  */
+@ApplicationScoped
 class Application {
 
+    @ApplicationScoped
     @ContextName("camel-cdi-metrics")
     static class MetricsRoute extends RouteBuilder {
 
