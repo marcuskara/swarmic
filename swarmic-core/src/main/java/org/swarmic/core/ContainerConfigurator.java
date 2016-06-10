@@ -16,19 +16,20 @@
 
 package org.swarmic.core;
 
+import org.jboss.logging.Logger;
 import org.jboss.weld.environment.se.Weld;
-import org.jboss.weld.experimental.InterceptorBuilder;
 
 import javax.enterprise.inject.spi.Extension;
 import java.lang.annotation.Annotation;
 
 /**
- *
  * This Container configurator class wrap the actual class to remove dangerous method for third party configurator
  *
  * @author Antoine Sabot-Durand
  */
 public class ContainerConfigurator {
+
+    final private static Logger LOG = Logger.getLogger(ContainerConfigurator.class);
 
     private Weld weld;
 
@@ -37,68 +38,85 @@ public class ContainerConfigurator {
     }
 
 
-    public Weld beanClasses(Class<?>... classes) {
-        return weld.beanClasses(classes);
+    public ContainerConfigurator beanClasses(Class<?>... classes) {
+        weld.beanClasses(classes);
+        return this;
     }
 
-    public Weld addBeanClass(Class<?> beanClass) {
-        return weld.addBeanClass(beanClass);
+    public ContainerConfigurator addBeanClass(Class<?> beanClass) {
+        weld.addBeanClass(beanClass);
+        return this;
     }
 
-    public Weld packages(Class<?>... packageClasses) {
-        return weld.packages(packageClasses);
+    public ContainerConfigurator packages(Class<?>... packageClasses) {
+        weld.packages(packageClasses);
+        return this;
     }
 
-    public Weld addPackages(boolean scanRecursively, Class<?>... packageClasses) {
-        return weld.addPackages(scanRecursively, packageClasses);
+    public ContainerConfigurator addPackages(boolean scanRecursively, Class<?>... packageClasses) {
+        weld.addPackages(scanRecursively, packageClasses);
+        return this;
     }
 
-    public Weld addPackage(boolean scanRecursively, Class<?> packageClass) {
-        return weld.addPackage(scanRecursively, packageClass);
+    public ContainerConfigurator addPackage(boolean scanRecursively, Class<?> packageClass) {
+        weld.addPackage(scanRecursively, packageClass);
+        return this;
     }
 
-    public Weld extensions(Extension... extensions) {
-        return weld.extensions(extensions);
+    public ContainerConfigurator extensions(Extension... extensions) {
+        weld.extensions(extensions);
+        return this;
     }
 
-    public Weld addExtension(Extension extension) {
-        return weld.addExtension(extension);
+    public ContainerConfigurator addExtension(Extension extension) {
+        weld.addExtension(extension);
+        return this;
     }
 
-    public Weld interceptors(Class<?>... interceptorClasses) {
-        return weld.interceptors(interceptorClasses);
+    public ContainerConfigurator interceptors(Class<?>... interceptorClasses) {
+        weld.interceptors(interceptorClasses);
+        return this;
     }
 
-    public Weld addInterceptor(Class<?> interceptorClass) {
-        return weld.addInterceptor(interceptorClass);
+    public ContainerConfigurator addInterceptor(Class<?> interceptorClass) {
+        weld.addInterceptor(interceptorClass);
+        return this;
     }
 
-    public Weld decorators(Class<?>... decoratorClasses) {
-        return weld.decorators(decoratorClasses);
+    public ContainerConfigurator decorators(Class<?>... decoratorClasses) {
+        weld.decorators(decoratorClasses);
+        return this;
     }
 
-    public Weld addDecorator(Class<?> decoratorClass) {
-        return weld.addDecorator(decoratorClass);
+    public ContainerConfigurator addDecorator(Class<?> decoratorClass) {
+        weld.addDecorator(decoratorClass);
+        return this;
     }
 
-    public Weld alternatives(Class<?>... alternativeClasses) {
-        return weld.alternatives(alternativeClasses);
+    public ContainerConfigurator alternatives(Class<?>... alternativeClasses) {
+        weld.alternatives(alternativeClasses);
+        return this;
     }
 
-    public Weld addAlternative(Class<?> alternativeClass) {
-        return weld.addAlternative(alternativeClass);
+    public ContainerConfigurator addAlternative(Class<?> alternativeClass) {
+        weld.addAlternative(alternativeClass);
+        return this;
     }
 
 
-    public Weld alternativeStereotypes(Class<? extends Annotation>... alternativeStereotypeClasses) {
-        return weld.alternativeStereotypes(alternativeStereotypeClasses);
+    public ContainerConfigurator alternativeStereotypes(Class<? extends Annotation>... alternativeStereotypeClasses) {
+        weld.alternativeStereotypes(alternativeStereotypeClasses);
+        return this;
     }
 
-    public Weld addAlternativeStereotype(Class<? extends Annotation> alternativeStereotypeClass) {
-        return weld.addAlternativeStereotype(alternativeStereotypeClass);
+    public ContainerConfigurator addAlternativeStereotype(Class<? extends Annotation> alternativeStereotypeClass) {
+        weld.addAlternativeStereotype(alternativeStereotypeClass);
+        return this;
     }
 
-    public InterceptorBuilder addInterceptor() {
-        return weld.addInterceptor();
+    public ContainerConfigurator disableDiscovery() {
+        LOG.warn("A container configurator disabled bean discovery");
+        weld.disableDiscovery();
+        return this;
     }
 }

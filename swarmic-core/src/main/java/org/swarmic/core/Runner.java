@@ -65,7 +65,7 @@ public class Runner {
      */
     protected void runConfigurators(ContainerConfigurator configurator) {
         ServiceLoader<ContainerConfiguration> configs = ServiceLoader.load(ContainerConfiguration.class);
-        configs.forEach(c -> c.getValue().configure(configurator));
+        configs.forEach(c -> {LOG.info("Calling configurator: " + c.getValue().getClass().getCanonicalName());c.getValue().configure(configurator);});
     }
 
     /**
