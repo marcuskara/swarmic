@@ -1,0 +1,12 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.m2
+
+notifications:
+  email:
+    - antoine@sabot-durand.net
