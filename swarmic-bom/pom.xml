@@ -47,191 +47,57 @@
         <tag>HEAD</tag>
     </scm>
 
-    <properties>
-        <cdi.version>2.0.Alpha4</cdi.version>
-        <javax.inject.version>1</javax.inject.version>
-        <weld.version>3.0.0.Alpha16</weld.version>
-        <deltaspike.version>1.6.1</deltaspike.version>
-        <resteasy.version>3.0.17.Final</resteasy.version>
-        <arquillian.version>1.1.11.Final</arquillian.version>
-        <undertow.version>1.3.22.Final</undertow.version>
-        <jetty.version>9.3.9.v20160517</jetty.version>
-        <arquillian.weld.version>1.0.0.CR9</arquillian.weld.version>
-        <slf4j.version>1.7.21</slf4j.version>
-        <junit.version>4.12</junit.version>
-        <tamaya.version>0.2-incubating</tamaya.version>
-        <assertj.version>3.4.1</assertj.version>
-        <commons-io.version>2.5</commons-io.version>
-        <narayana-jta.version>5.3.3.Final</narayana-jta.version>
-        <javax.transaction-api.version>1.2</javax.transaction-api.version>
-    </properties>
+
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.swarmic</groupId>
+                <artifactId>camel</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.swarmic</groupId>
-                <artifactId>web-undertow</artifactId>
+                <artifactId>jta-narayana</artifactId>
                 <version>${project.version}</version>
+                <scope>compile</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.swarmic</groupId>
                 <artifactId>rest-resteasy</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se-core</artifactId>
-                <version>${weld.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.weld.servlet</groupId>
-                <artifactId>weld-servlet-core</artifactId>
-                <version>${weld.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se-shaded</artifactId>
-                <version>${weld.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.narayana.jta</groupId>
-                <artifactId>narayana-jta</artifactId>
-                <version>${narayana-jta.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.transaction</groupId>
-                <artifactId>javax.transaction-api</artifactId>
-                <version>${javax.transaction-api.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-jaxrs</artifactId>
-                <version>${resteasy.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.undertow</groupId>
-                <artifactId>undertow-core</artifactId>
-                <version>${undertow.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.undertow</groupId>
-                <artifactId>undertow-servlet</artifactId>
-                <version>${undertow.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.undertow</groupId>
-                <artifactId>undertow-websockets-jsr</artifactId>
-                <version>${undertow.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-servlets</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-webapp</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-cdi</artifactId>
-                <version>${resteasy.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>async-http-servlet-3.0</artifactId>
-                <version>${resteasy.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.arquillian.junit</groupId>
-                <artifactId>arquillian-junit-container</artifactId>
-                <version>${arquillian.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.arquillian.container</groupId>
-                <artifactId>arquillian-weld-se-embedded-1.1</artifactId>
-                <version>${arquillian.weld.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-client</artifactId>
-                <version>${resteasy.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-core</artifactId>
-                <version>${assertj.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.tamaya</groupId>
-                <artifactId>tamaya-core</artifactId>
-                <version>${tamaya.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.tamaya.ext</groupId>
-                <artifactId>tamaya-injection</artifactId>
-                <version>${tamaya.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.enterprise</groupId>
-                <artifactId>cdi-api</artifactId>
-                <version>${cdi.version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.inject</groupId>
-                <artifactId>javax.inject</artifactId>
-                <version>${javax.inject.version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.deltaspike.core</groupId>
-                <artifactId>deltaspike-core-api</artifactId>
-                <version>${deltaspike.version}</version>
                 <scope>compile</scope>
             </dependency>
 
             <dependency>
-                <groupId>org.apache.deltaspike.core</groupId>
-                <artifactId>deltaspike-core-impl</artifactId>
-                <version>${deltaspike.version}</version>
-                <scope>runtime</scope>
+                <groupId>org.swarmic</groupId>
+                <artifactId>security-spi</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.swarmic</groupId>
+                <artifactId>web-spi</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.swarmic</groupId>
+                <artifactId>web-jetty</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.swarmic</groupId>
+                <artifactId>web-undertow</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
             </dependency>
 
         </dependencies>

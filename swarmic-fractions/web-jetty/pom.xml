@@ -26,19 +26,29 @@
 
     <artifactId>web-jetty</artifactId>
 
+    <properties>
+        <jetty.version>9.3.9.v20160517</jetty.version>
+
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.swarmic</groupId>
             <artifactId>web-spi</artifactId>
             <version>${project.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlets</artifactId>
+            <version>${jetty.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
+            <version>${jetty.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -53,5 +63,6 @@
             <artifactId>commons-io</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>

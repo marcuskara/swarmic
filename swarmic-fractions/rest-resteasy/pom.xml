@@ -26,25 +26,37 @@
 
     <artifactId>rest-resteasy</artifactId>
 
+    <properties>
+        <resteasy.version>3.0.17.Final</resteasy.version>
+    </properties>
+
 
     <dependencies>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
+            <version>${resteasy.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-cdi</artifactId>
+            <version>${resteasy.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>async-http-servlet-3.0</artifactId>
+            <version>${resteasy.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.swarmic</groupId>
             <artifactId>web-spi</artifactId>
             <version>${project.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
+
 
 </project>

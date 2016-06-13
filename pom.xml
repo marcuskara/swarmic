@@ -26,7 +26,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>swarmic-parent</module>
         <module>swarmic-bom</module>
         <module>swarmic-core</module>
         <module>swarmic-fractions</module>
@@ -36,6 +35,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <weld.version>3.0.0.Alpha16</weld.version>
+        <junit.version>4.12</junit.version>
+        <tamaya.version>0.2-incubating</tamaya.version>
+        <commons-io.version>2.5</commons-io.version>
+        <assertj.version>3.4.1</assertj.version>
+        <arquillian.version>1.1.11.Final</arquillian.version>
         <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
         <maven-release-plugin.version>2.5</maven-release-plugin.version>
         <maven-source-plugin.version>2.4</maven-source-plugin.version>
@@ -43,6 +48,9 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <jdk.version>1.8</jdk.version>
+        <arquillian-bom.version>1.1.11.Final</arquillian-bom.version>
+        <arquillian-weld.version>1.0.0.CR9</arquillian-weld.version>
+        <slf4j.version>1.7.21</slf4j.version>
     </properties>
 
     <distributionManagement>
@@ -51,6 +59,67 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.weld.se</groupId>
+                <artifactId>weld-se-shaded</artifactId>
+                <version>${weld.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tamaya</groupId>
+                <artifactId>tamaya-core</artifactId>
+                <version>${tamaya.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tamaya.ext</groupId>
+                <artifactId>tamaya-injection</artifactId>
+                <version>${tamaya.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>arquillian-weld-se-embedded-1.1</artifactId>
+                <version>${arquillian-weld.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
     <build>
         <pluginManagement>
             <plugins>

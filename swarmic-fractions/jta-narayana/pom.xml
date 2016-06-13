@@ -27,18 +27,24 @@
 
     <artifactId>jta-narayana</artifactId>
 
+    <properties>
+        <narayana-jta.version>5.3.3.Final</narayana-jta.version>
+        <javax.transaction-api.version>1.2</javax.transaction-api.version>
+    </properties>
+
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.weld.se</groupId>
-            <artifactId>weld-se-core</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.jboss.narayana.jta</groupId>
             <artifactId>narayana-jta</artifactId>
+            <version>${narayana-jta.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
+            <version>${javax.transaction-api.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
+
 </project>

@@ -33,15 +33,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.swarmic</groupId>
-            <artifactId>swarmic-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-cdi</artifactId>
             <version>${camel-cdi.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

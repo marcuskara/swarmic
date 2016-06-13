@@ -26,20 +26,28 @@
 
     <artifactId>web-undertow</artifactId>
 
+    <properties>
+        <undertow.version>1.3.22.Final</undertow.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.swarmic</groupId>
             <artifactId>web-spi</artifactId>
             <version>${project.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-servlet</artifactId>
+            <version>${undertow.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
+            <version>${undertow.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -58,4 +66,5 @@
             <artifactId>commons-io</artifactId>
         </dependency>
     </dependencies>
+
 </project>
