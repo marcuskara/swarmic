@@ -31,7 +31,7 @@
     <properties>
         <swarmic.mainClass>org.swarmic.camel.Main</swarmic.mainClass>
         <camel-metrics.version>2.17.1</camel-metrics.version>
-        <metrics-cdi.version>1.3.3</metrics-cdi.version>
+        <metrics-cdi.version>1.3.6</metrics-cdi.version>
         <log4j.version>2.5</log4j.version>
     </properties>
 
