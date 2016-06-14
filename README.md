@@ -1,5 +1,10 @@
 # Welcome to Swarmic
 
+[![Build Status][Travis badge]][Travis build]
+
+[Travis badge]: https://travis-ci.org/swarmic/swarmic.svg?branch=master
+[Travis build]: https://travis-ci.org/swarmic/swarmic
+
 Swarmic is a CDI based project to create small standalone Java SE applications integrating different technologies and framework through CDI.
 
 Swarmic is targeted to CDI 2.0, since it's the first version supporting Java SE boot.
