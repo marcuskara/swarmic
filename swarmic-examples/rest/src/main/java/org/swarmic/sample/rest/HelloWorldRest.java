@@ -26,7 +26,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 /**
- * Created by antoine on 06/06/2016.
+ *
+ *
  */
 @Path("/hello")
 @RequestScoped

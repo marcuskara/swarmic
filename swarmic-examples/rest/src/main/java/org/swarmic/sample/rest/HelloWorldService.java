@@ -16,20 +16,25 @@
 
 package org.swarmic.sample.rest;
 
+import org.jboss.logging.Logger;
 import org.swarmic.sample.rest.jpa.HelloEntity;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 
 @ApplicationScoped
 public class HelloWorldService {
 
-    @Inject
+    @PersistenceContext(unitName = "Swarmic")
     private EntityManager entityManager;
 
+    private static final Logger LOG = Logger.getLogger(HelloWorldService.class);
+
     public String getHello(String msg) {
+        LOG.info("Entity manager is " + (entityManager.isJoinedToTransaction() ? "in a transaction" : "not in a transaction"));
         entityManager.merge(new HelloEntity(msg));
         return "Hello : " + msg;
     }

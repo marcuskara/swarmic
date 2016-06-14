@@ -32,23 +32,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <distribution>repo</distribution>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-        </license>
-    </licenses>
-
-    <scm>
-        <connection>git@github.com:swarmic/swarmic-bom.git</connection>
-        <developerConnection>scm:git:git@github.com:swarmic/swarmic-bom.git</developerConnection>
-        <url>http://github.com/swarmic/swarmic-bom</url>
-        <tag>HEAD</tag>
-    </scm>
-
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -96,6 +79,13 @@
             <dependency>
                 <groupId>org.swarmic</groupId>
                 <artifactId>web-undertow</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.swarmic</groupId>
+                <artifactId>jpa-hibernate</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>

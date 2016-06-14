@@ -25,6 +25,21 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <distribution>repo</distribution>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>git@github.com:swarmic/swarmic.git</connection>
+        <developerConnection>scm:git:git@github.com:swarmic/swarmic.git</developerConnection>
+        <url>http://github.com/swarmic/swarmic</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <modules>
         <module>swarmic-bom</module>
         <module>swarmic-core</module>
@@ -51,6 +66,8 @@
         <arquillian-bom.version>1.1.11.Final</arquillian-bom.version>
         <arquillian-weld.version>1.0.0.CR9</arquillian-weld.version>
         <slf4j.version>1.7.21</slf4j.version>
+        <deltaspike.version>1.6.1</deltaspike.version>
+        <jboss-logging.version>3.3.0.Final</jboss-logging.version>
     </properties>
 
     <distributionManagement>
@@ -65,6 +82,30 @@
                 <groupId>org.jboss.weld.se</groupId>
                 <artifactId>weld-se-shaded</artifactId>
                 <version>${weld.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-api</artifactId>
+                <version>${deltaspike.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-impl</artifactId>
+                <version>${deltaspike.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.modules</groupId>
+                <artifactId>deltaspike-jpa-module-api</artifactId>
+                <version>${deltaspike.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.modules</groupId>
+                <artifactId>deltaspike-jpa-module-impl</artifactId>
+                <version>${deltaspike.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
@@ -90,6 +131,19 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>${jboss-logging.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>

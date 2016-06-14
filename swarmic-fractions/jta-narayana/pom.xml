@@ -29,7 +29,9 @@
 
     <properties>
         <narayana-jta.version>5.3.3.Final</narayana-jta.version>
-        <javax.transaction-api.version>1.2</javax.transaction-api.version>
+        <jnpserver.version>5.0.3.GA</jnpserver.version>
+        <jboss-transaction-spi.version>7.3.1.Final</jboss-transaction-spi.version>
+        <jboss-transaction-api_1.2_spec.version>1.0.1.Final</jboss-transaction-api_1.2_spec.version>
     </properties>
 
     <dependencies>
@@ -40,10 +42,41 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>javax.transaction-api</artifactId>
-            <version>${javax.transaction-api.version}</version>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+            <version>${jboss-transaction-api_1.2_spec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.naming</groupId>
+            <artifactId>jnpserver</artifactId>
+            <version>${jnpserver.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.logging</groupId>
+                    <artifactId>jboss-logging-spi</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jboss-transaction-spi</artifactId>
+            <version>${jboss-transaction-spi.version}</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.logging</groupId>
+                    <artifactId>jboss-logging-spi</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.spec.javax.transaction</groupId>
+                    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.spec.javax.transaction</groupId>
+                    <artifactId>jboss-transaction-api_1.1_spec</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.swarmic.jta.narayana;
+package org.swarmic.jta.narayana.weld;
 
 import com.arjuna.ats.jta.TransactionManager;
 import org.jboss.weld.transaction.spi.TransactionServices;

@@ -23,6 +23,8 @@ import javax.enterprise.inject.spi.CDI;
 
 /**
  * An extension of the CdiInjectorFactory that statically loads the bean manager without additional look ups.
+ *
+ * @author John D. Ament
  */
 public class Cdi11InjectorFactory extends CdiInjectorFactory{
     @Override

@@ -31,6 +31,12 @@ import java.util.Map;
 
 import static java.util.Collections.singletonMap;
 
+/**
+ * Configuration of Resteasy application servlet
+ *
+ * @Author John D. Ament
+ *
+ */
 @ApplicationScoped
 public class ResteasyServletContextAttributeProvider implements ServletContextAttributeProvider {
     @Inject
