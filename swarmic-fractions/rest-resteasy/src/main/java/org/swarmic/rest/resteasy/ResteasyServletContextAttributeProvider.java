@@ -34,7 +34,7 @@ import static java.util.Collections.singletonMap;
 /**
  * Configuration of Resteasy application servlet
  *
- * @Author John D. Ament
+ * @author John D. Ament
  *
  */
 @ApplicationScoped

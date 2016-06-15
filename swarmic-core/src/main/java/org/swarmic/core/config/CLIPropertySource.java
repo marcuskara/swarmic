@@ -52,7 +52,6 @@ public class CLIPropertySource extends BasePropertySource {
      * Configure the main arguments, herby parsing and mapping the main arguments into
      * configuration properties.
      * @param args the main arguments, not null.
-     * @returns the parsed main arguments as key/value pairs.
      */
     public static void initMainArgs(String... args){
         CLIPropertySource.args = Objects.requireNonNull(args);
