@@ -20,7 +20,7 @@
 
     <groupId>org.swarmic</groupId>
     <artifactId>swarmic</artifactId>
-    <version>1.0.0.Alpha1</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Swarmic</name>
     <description>Swarmic Project - The CDI stack</description>
@@ -51,7 +51,7 @@
         <connection>git@github.com:swarmic/swarmic.git</connection>
         <developerConnection>scm:git:git@github.com:swarmic/swarmic.git</developerConnection>
         <url>http://github.com/swarmic/swarmic</url>
-        <tag>swarmic-1.0.0.Alpha1</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
