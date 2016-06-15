@@ -1,6 +1,6 @@
 # Rest Example
 
-This example show how to build a Jax-RS service using Undertow and Resteasy fragmenets
+This example show how to build a JAX-RS service using Undertow and RESTEasy fragments
 
 
 ## Building
@@ -26,7 +26,7 @@ Answer should be `Hello : swarmic`
 
 ## Building and running from fat jar
 
-You can crate a fat jar containing all resources to run this example just enter the following command:
+You can create a fat jar containing all resources to run this example just enter the following command:
 
 `mvn clean install -Pjar`
 

@@ -1,8 +1,8 @@
 # Camel Metrics Example
 
-This example show how to build a Camel services using Camel-CDI and Metrics-CDI
+This example shows how to build a Camel services using Camel-CDI and Metrics-CDI
 
-Application class configure a Camel route which try to reach an unreliable service bean (defined by `UnreliableService` class) each second.
+Application class configures a Camel route which tries to reach an unreliable service bean (defined by `UnreliableService` class) each second.
 
 Successful attempts to reach the service are stored in metrics.
 If the service fails (50 % chance of failure), the route is retried maximum twice.
@@ -10,13 +10,13 @@ These retries are also stored in metric.
 
 Fatal error after retries are also stored in metrics.
 
-All registered metrics are reported to a Slf4j metric reporter which display all event on the console.
+All registered metrics are reported to a Slf4j metric reporter which displays all events on the console.
 
-The example show you the possibilities given by Camel-CDI to create Camel routes, Metrics CDI to register new Metrics and new reporter to work with reporting info and of course how swarmic can embedded all these in a standalone application.
+The example shows you the possibilities given by Camel-CDI to create Camel routes, Metrics CDI to register new Metrics and new reporter to work with reporting info and of course how swarmic can embed all these in a standalone application.
 
 ## Building
 
-Before playing with samples, make sure to install `bom` and `parent` artifacts in your local maven repo by issue the following command at the root of the repo.
+Before playing with samples, make sure to install `bom` and `parent` artifacts in your local Maven repo by issue the following command at the root of the repo.
 
 `mvn clean install`
 
@@ -29,12 +29,12 @@ Once built, you can run the example with
 
 `mvn exec:exec`
 
-You'll see all the reporting regarding Camel route displyed on the console.
+You'll see all the reporting regarding Camel route displayed on the console.
 
 
 ## Building and running from fat jar
 
-You can crate a fat jar containing all resources to run this example just enter the following command:
+You can create a fat jar containing all resources to run this example just enter the following command:
 
 `mvn clean install -Pjar`
 
