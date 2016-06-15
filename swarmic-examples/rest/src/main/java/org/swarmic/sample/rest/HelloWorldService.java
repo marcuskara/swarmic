@@ -16,13 +16,21 @@
 
 package org.swarmic.sample.rest;
 
+import org.swarmic.sample.rest.jpa.HelloEntity;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
 
 @ApplicationScoped
 public class HelloWorldService {
 
+    @Inject
+    private EntityManager entityManager;
+
     public String getHello(String msg) {
+        entityManager.merge(new HelloEntity(msg));
         return "Hello : " + msg;
     }
 

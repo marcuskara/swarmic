@@ -36,6 +36,7 @@
         <module>web-jetty</module>
         <module>jta-narayana</module>
         <module>camel</module>
+        <module>jpa-hibernate</module>
     </modules>
 
     <dependencies>

@@ -16,9 +16,9 @@
 
 package org.swarmic.sample.rest;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -30,6 +30,7 @@ import javax.ws.rs.core.Response;
  */
 @Path("/hello")
 @RequestScoped
+@Transactional
 public class HelloWorldRest {
 
     @Inject
