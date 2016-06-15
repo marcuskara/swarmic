@@ -24,6 +24,22 @@
     <artifactId>swarmic</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>Swarmic</name>
+    <description>Swarmic Project - The CDI stack</description>
+    <url>https://twitter.com/swarmic</url>
+    <developers>
+        <developer>
+            <name>Antoine Sabot-Durand</name>
+            <organization>Red Hat</organization>
+        </developer>
+        <developer>
+            <name>John D. Ament</name>
+        </developer>
+        <developer>
+            <name>Antonin Stefanutti</name>
+            <organization>Red Hat</organization>
+        </developer>
+    </developers>
 
     <licenses>
         <license>
@@ -40,19 +56,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <contributors>
-        <contributor>
-            <name>John D. Ament</name>
-        </contributor>
-        <contributor>
-            <name>Antoine Sabot-Durand</name>
-            <organization>Red Hat</organization>
-        </contributor>
-        <contributor>
-            <name>Antonin Stefanutti</name>
-            <organization>Red Hat</organization>
-        </contributor>
-    </contributors>
 
     <modules>
         <module>swarmic-bom</module>
