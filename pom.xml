@@ -40,6 +40,20 @@
         <tag>HEAD</tag>
     </scm>
 
+    <contributors>
+        <contributor>
+            <name>John D. Ament</name>
+        </contributor>
+        <contributor>
+            <name>Antoine Sabot-Durand</name>
+            <organization>Red Hat</organization>
+        </contributor>
+        <contributor>
+            <name>Antonin Stefanutti</name>
+            <organization>Red Hat</organization>
+        </contributor>
+    </contributors>
+
     <modules>
         <module>swarmic-bom</module>
         <module>swarmic-core</module>
