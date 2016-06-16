@@ -29,9 +29,9 @@ import javax.persistence.Persistence;
  */
 public class EntityManagerFactoryReferenceFactory implements ResourceReferenceFactory<EntityManagerFactory> {
 
-    private String unitName;
+    private final String unitName;
 
-    public EntityManagerFactoryReferenceFactory(String unitName) {
+    EntityManagerFactoryReferenceFactory(String unitName) {
         this.unitName = unitName;
     }
 
@@ -44,7 +44,7 @@ public class EntityManagerFactoryReferenceFactory implements ResourceReferenceFa
             @Override
             public EntityManagerFactory getInstance() {
                 if (emf == null)
-                emf = Persistence.createEntityManagerFactory(unitName);
+                    emf = Persistence.createEntityManagerFactory(unitName);
                 return emf;
             }
 

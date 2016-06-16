@@ -47,11 +47,7 @@ public class NarayanaTransactionServices implements TransactionServices {
     public void registerSynchronization(Synchronization synchronizedObserver) {
         try {
             getTransactionManager().getTransaction().registerSynchronization(synchronizedObserver);
-        } catch (IllegalStateException e) {
-            throw new RuntimeException(e);
-        } catch (RollbackException e) {
-            throw new RuntimeException(e);
-        } catch (SystemException e) {
+        } catch (IllegalStateException | RollbackException | SystemException e) {
             throw new RuntimeException(e);
         }
 
@@ -87,7 +83,7 @@ public class NarayanaTransactionServices implements TransactionServices {
         return com.arjuna.ats.jta.UserTransaction.userTransaction();
     }
 
-    public javax.transaction.TransactionManager getTransactionManager() {
+    private javax.transaction.TransactionManager getTransactionManager() {
         return TransactionManager.transactionManager();
     }
 

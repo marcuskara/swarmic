@@ -30,10 +30,10 @@ import javax.persistence.Persistence;
  */
 public class EntityManagerReferenceFactory implements ResourceReferenceFactory<EntityManager> {
 
-    private String unitName;
+    private final String unitName;
     private EntityManagerFactory emf;
 
-    public EntityManagerReferenceFactory(String unitName) {
+    EntityManagerReferenceFactory(String unitName) {
         this.unitName = unitName;
     }
 
