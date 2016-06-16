@@ -56,7 +56,7 @@ public class CLIPropertySource extends BasePropertySource {
     public static void initMainArgs(String... args){
         CLIPropertySource.args = Objects.requireNonNull(args);
         // TODO is there a way to figure out the args?
-        String argsProp = System.getProperty("main.args");
+        String argsProp = System.getProperty("sun.java.command");
         if(argsProp!=null){
             CLIPropertySource.args = argsProp.split("\\s");
         }
